@@ -3,13 +3,13 @@ Package k8sExtDhcp implements external names for kubernetes clusters where exter
 initial part of the dns name, for example an external name of dashboard in the zone kube.service will
 return the external ip(s) when querying dashboard.kube.service.
 
-This is probably functionality already supported by the k8s_external plugin but I wanted to try to write one... with problems.
+This is probably functionality already supported by the k8s_external plugin but I wanted to try to write one...
 
 Issues/Improvements:
 - Make lookup constant time (index on external name?)
 - Handle ipv6
 - Testing is non-existant
-- Others
+- Others...
 */
 package k8sExtDhcp
 
