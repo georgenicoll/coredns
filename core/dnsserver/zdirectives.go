@@ -46,6 +46,7 @@ var Directives = []string{
 	"route53",
 	"azure",
 	"clouddns",
+	"k8s_ext_dhcp",
 	"k8s_external",
 	"kubernetes",
 	"file",
