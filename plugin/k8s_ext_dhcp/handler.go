@@ -97,7 +97,15 @@ func (h Handler) serviceRecords(services []*object.Service, w *dns.ResponseWrite
 			switch request.QType() {
 			case dns.TypeA:
 				ip := net.ParseIP(ipAddress)
-				a := &dns.A{Hdr: dns.RR_Header{Name: request.QName(), Rrtype: dns.TypeA, Class: dns.ClassINET, Ttl: h.ttlSeconds}, A: ip}
+				a := &dns.A{
+					Hdr: dns.RR_Header{
+						Name:   request.QName(),
+						Rrtype: dns.TypeA,
+						Class:  dns.ClassINET,
+						Ttl:    h.ttlSeconds,
+					},
+					A: ip,
+				}
 				records = append(records, a)
 			case dns.TypeAAAA:
 				// FIXME:  add to handle ipv6
